@@ -1,3 +1,1 @@
-const nombre = "Fainner";
-
-export const getSaludo = (nombre) => "Hola" + nombre;
+export const getSaludo = (nombre = "Carlos") => "Hola " + nombre;
