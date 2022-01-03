@@ -1,4 +1,4 @@
-import { getUser } from "../base/02-funciones";
+import { getUser, getUserActivo } from "../base/02-funciones";
 
 describe("pruebas en el archivo 02-funciones.js", () => {
   test("getUser debe retornar un objeto", () => {
@@ -9,8 +9,19 @@ describe("pruebas en el archivo 02-funciones.js", () => {
 
     const user = getUser();
 
-    console.log(user);
+    expect(user).toEqual(userTest);
+  });
 
-    expect(user).toBe(userTest);
+  //con parámetro nombre
+
+  test("la prueba debe retornar un objeto dependiendo el nombre", () => {
+    const userTest = {
+      uid: "ABC123",
+      username: "FAINNER",
+    };
+
+    const user = getUserActivo("FAINNER");
+
+    expect(user).toEqual(userTest);
   });
 });
