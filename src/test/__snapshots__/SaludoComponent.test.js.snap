@@ -5,8 +5,6 @@ exports[`pruebas del archivo Saludo.component.js debe de mostrar el componente <
   <h1>
     Hola que tal!
   </h1>
-  <h3>
-    Esto es un subtitulo
-  </h3>
+  <h3 />
 </div>
 `;

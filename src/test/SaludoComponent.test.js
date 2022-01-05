@@ -22,4 +22,19 @@ describe("pruebas del archivo Saludo.component.js", () => {
 
     expect(view).toMatchSnapshot();
   });
+
+  test("debe de mostrar el subititulo mostardo por props", () => {
+    const saludo = "Hola que tal!";
+    const subtitulo = "Esto es un subtitulo";
+
+    const view = shallow(
+      <SaludoComponent saludo={saludo} subtitulo={subtitulo} />
+    );
+
+    const textoParrafo = view.find("h3").text();
+
+    console.log(textoParrafo);
+
+    expect(textoParrafo).toBe(subtitulo);
+  });
 });

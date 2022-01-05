@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import "./App.css";
 
-const CounterApp = ({ value }) => {
+const CounterApp = ({ value = 100 }) => {
   const [count, setCount] = useState(value);
 
   const handleClick = () => setCount((c) => c + 1);
@@ -23,8 +23,6 @@ CounterApp.propTypes = {
   value: PropTypes.number.isRequired,
 };
 
-CounterApp.defaultProps = {
-  value: 0,
-};
+CounterApp.defaultProps = {};
 
 export default CounterApp;

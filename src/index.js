@@ -1,12 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-//import App from "./App";
-import SaludoComponent from "./components/Saludo.component";
+import CounterApp from "./CounterApp";
+//import SaludoComponent from "./components/Saludo.component";
 
 ReactDOM.render(
   <React.StrictMode>
-    <SaludoComponent saludo="Hola que tal!" />
+    {/*<SaludoComponent saludo="Hola que tal!" subtitulo="Esto es un subtitulo" />*/}
+    <CounterApp />
   </React.StrictMode>,
   document.getElementById("root")
 );
