@@ -30,4 +30,10 @@ describe("Pruebas en el componente <CounterApp />", () => {
     const textCount = view.find("h1").text().trim();
     expect(textCount).toBe("99");
   });
+
+  test("Debe poner el valor por defecto al darle click en el boton de reset", () => {
+    view.find("button").at(1).simulate("click");
+    const textCount = view.find("h1").text().trim();
+    expect(textCount).toBe("100");
+  });
 });
