@@ -17,11 +17,7 @@ describe("Pruebas en el componente <CounterApp />", () => {
 
   test("Debe de incrementar el valor de count con el boton de '+'", () => {
     view.find("button").at(0).simulate("click");
-
     const textCount = view.find("h1").text().trim();
-
-    console.log("click event", textCount);
-
     expect(textCount).toBe("101");
   });
 });
