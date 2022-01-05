@@ -32,8 +32,9 @@ describe("Pruebas en el componente <CounterApp />", () => {
   });
 
   test("Debe poner el valor por defecto al darle click en el boton de reset", () => {
+    const view = shallow(<CounterApp value={345} />);
     view.find("button").at(1).simulate("click");
     const textCount = view.find("h1").text().trim();
-    expect(textCount).toBe("100");
+    expect(textCount).toBe("345");
   });
 });
