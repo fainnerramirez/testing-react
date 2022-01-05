@@ -2,7 +2,11 @@ import { shallow } from "enzyme";
 import CounterApp from "../CounterApp";
 
 describe("Pruebas en el componente <CounterApp />", () => {
-  const view = shallow(<CounterApp />);
+  let view = shallow(<CounterApp />);
+
+  beforeEach(() => {
+    view = shallow(<CounterApp />);
+  });
 
   test("se debe mostrar correctamente <CounterApp />", () => {
     expect(view).toMatchSnapshot();
@@ -15,9 +19,15 @@ describe("Pruebas en el componente <CounterApp />", () => {
     expect(textoParrafo).toBe(valor);
   });
 
-  test("Debe de incrementar el valor de count con el boton de '+'", () => {
+  test("Debe de incrementar el valor de count con el boton de 'increment'", () => {
     view.find("button").at(0).simulate("click");
     const textCount = view.find("h1").text().trim();
     expect(textCount).toBe("101");
+  });
+
+  test("Debe de decrementar el valor de count con el boton de 'decrement'", () => {
+    view.find("button").at(2).simulate("click");
+    const textCount = view.find("h1").text().trim();
+    expect(textCount).toBe("99");
   });
 });
